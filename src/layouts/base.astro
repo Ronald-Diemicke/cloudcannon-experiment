@@ -1,0 +1,18 @@
+---
+import BaseHeader from "./header.astro"
+import BaseFooter from "./footer.astro"
+import "/node_modules/@gbds/quantum/css/core/buick-2023.css"
+---
+<html>
+    <head>
+        <link rel="stylesheet" href="/hack.css" type="text/css">
+        <script is:inline src="/hack.js"></script>
+    </head>
+    <body>
+        <BaseHeader/>
+        <main>
+            <slot/>
+        </main>
+        <BaseFooter/>
+    </body>
+</html>

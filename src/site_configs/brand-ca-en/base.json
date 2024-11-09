@@ -1,0 +1,15 @@
+{
+  "siteName": "base",
+  "theme": [
+    "sitetheme"
+  ],
+  "domain": "www.buick.com/index2",
+  "translations": {
+    "translation": [
+      {
+        "key": "Alpha",
+        "value": "Beta"
+      }
+    ]
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "name": "cloudcannon-rpd-test",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "cms": "astro dev --port 8080",
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "stro build",
+    "preview": "astro preview"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@astrojs/mdx": "^3.1.8",
+    "@astrojs/sitemap": "^3.2.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.7.4",
+    "astro": "^4.16.6",
+    "prettier": "^3.3.3",
+    "prettier-plugin-astro": "^0.14.1"
+  }
+}
