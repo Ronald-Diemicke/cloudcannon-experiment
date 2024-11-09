@@ -1,65 +1,9 @@
 ---
 import { Debug } from 'astro:components';
-import PageBlocksSection from "../../components/sections/pageBlocksSection.tsx";
+import PageBlocksSection from "../../components/sections/pageBlocksSection.asto";
 import Layout from "../../layouts/base.astro";
-import fs from 'node:fs/promises';
-
-export async function getStaticPaths() {
-  const pages = await client.queries.pageConnection();
-
-    const pageNames =  pages.data.pageConnection.edges!.map((page) => {
-      return {
-        params: {
-          relativePath: page!.node!._sys.relativePath,
-          path: page!.node!._sys.filename
-        }
-      }
-    });
-
-  const pagesData = await Promise.all(
-      pageNames.map(async ({ params }) => {
-          return await client.queries.page({ relativePath: params.relativePath });
-      })
-  );
-
-  let map = await Promise.all(
-      pagesData.map(async (page) => {
-          //console.log('return', page);
-          //console.log('_sys', page.data.page._sys);
-          let path = page.data.page._sys.breadcrumbs.join('/');
-          if (page.data.page._sys.breadcrumbs.pop() === 'index') {
-              path = page.data.page._sys.breadcrumbs.join('/');
-          }
-
-          //attach the config
-          let brand = page.data.page._sys.breadcrumbs[0];
-          const url = new URL(`../../../src/site_configs/${brand}/base.json`, import.meta.url);
-          const json = await fs.readFile(url, 'utf-8');
-          const config = JSON.parse(json);
-
-          let retunobj = {
-              params: {path: path},
-              props: {tinaProps: {...page}, siteConfig: {...config}},
-          };
-          //console.log('returnobj', retunobj);
-          return retunobj;
-      })
-  );
-
-  return map;
-}
-
-const { tinaProps, siteConfig } = Astro.props;
-
-/*const { data } = useTina({
-  query: directResponse.query,
-  variables: directResponse.variables,
-  data: directResponse.data,
-})*/
 
 ---
 <Layout>
-    <!--Domain: {siteConfig.domain}-->
-    {import.meta.env.MODE === 'production' ? <PageBlocksSection tinaProps={tinaProps}/> : <PageBlocksSection client:tina tinaProps={tinaProps} />}
-    <!--{import.meta.env.MODE != 'production' ? <Debug answer={tinaProps}/> : null}-->
+    Page
 </Layout>
