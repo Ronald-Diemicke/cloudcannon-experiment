@@ -1,0 +1,52 @@
+---
+import client from "../../../tina/__generated__/client"
+import { Debug } from 'astro:components';
+import {Page_FragmentsQuery, Page_FragmentsQueryVariables} from "../../../tina/__generated__/types";
+import PageFramentBlocksSection from "../../components/sections/pageFragmentBlocksSection"
+
+interface Props {
+  tinaProps: {
+    variables: Page_FragmentsQueryVariables;
+    data: Page_FragmentsQuery;
+    query: string;
+  };
+}
+
+export async function getStaticPaths() {
+  const page_fragment = await client.queries.page_fragmentsConnection();
+    const partialNames =  page_fragment.data.page_fragmentsConnection.edges!.map((partial) => {
+      return {
+        params: {
+          relativePath: partial!.node!._sys.relativePath,
+          path: partial!.node!._sys.filename
+        }
+      }
+    });
+
+
+  const partialsData = await Promise.all(
+      partialNames.map(async ({ params }) => {
+        return await client.queries.page_fragments({ relativePath: params.relativePath });
+      })
+  );
+
+  return partialsData.map((partial) => {
+      let path = partial.data.page_fragments._sys.breadcrumbs.join('/');
+      if(partial.data.page_fragments._sys.breadcrumbs.pop() === 'index') {
+          path = partial.data.page_fragments._sys.breadcrumbs.join('/');
+      }
+    let retunobj = {
+      params: { path: path },
+      props: { tinaProps: { ...partial } },
+    };
+    return retunobj;
+  });
+}
+
+export const partial = true;
+const { tinaProps } = Astro.props;
+
+---
+
+    <!-- {import.meta.env.MODE === 'production' ? <PageFramentBlocksSection tinaProps={tinaProps}/> : <PageFramentBlocksSection client:tina tinaProps={tinaProps} />}-->
+    <!--Debug answer={tinaProps}/-->
