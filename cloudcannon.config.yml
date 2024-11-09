@@ -5,7 +5,7 @@ paths:
   static: ''
 collections_config:
   pages:
-    path: /content/pages
+    path: /src/pages
     name: Pages
     icon: wysiwyg
     disable_url: false
