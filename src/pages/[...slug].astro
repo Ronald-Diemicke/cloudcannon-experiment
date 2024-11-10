@@ -1,0 +1,35 @@
+---
+import { Debug } from 'astro:components';
+import PageBlocksSection from "../../components/sections/pageBlocksSection.astro";
+import Layout from "../layouts/base.astro";
+import {CollectionEntry,getCollection} from "astro:content";
+
+export interface Props {
+    page: CollectionEntry<"pages">;
+}
+
+export async function getStaticPaths() {
+    const pages = await getCollection("pages");
+    return pages.map((page) => {
+        const slug = page.slug.replace(/index$/, "");
+        if (slug.length === 0)
+            return { params: { slug: undefined }, props: { page } };
+        return { params: { slug }, props: { page } };
+    });
+}
+
+const page = Astro.props.page;
+/*if (!page.data.content_blocks) {
+    throw new Error(
+        `Tried to output page with unsupported schema: ${page.data._schema}`
+    );
+}*/
+---
+<Layout>
+    <div>{page.slug}</div>
+    <div class="editable">{page.data.content}</div>
+    <div data-cms-bind="#tags">{page.data.tags}</div>
+    <div data-cms-bind="#image">
+        <img src="{page.data.image}"/>
+    </div>
+</Layout>
