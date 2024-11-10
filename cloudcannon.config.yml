@@ -19,6 +19,7 @@ collections_config:
       metadata:
       gallery:
     _enabled_editors:
+      - visual
     disable_add: false
     disable_add_folder: false
     disable_file_actions: false
