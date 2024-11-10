@@ -1,5 +1,5 @@
 ---
-content: index123456
+content: index123
 tags:
   - none
   - another

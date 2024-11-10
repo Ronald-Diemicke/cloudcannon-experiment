@@ -26,10 +26,5 @@ const page = Astro.props.page;
 }*/
 ---
 <Layout>
-    <div>{page.slug}</div>
-    <div class="editable">{page.data.content}</div>
-    <div data-cms-bind="#tags">{page.data.tags}</div>
-    <div data-cms-bind="#image">
-        <img src="{page.data.image}"/>
-    </div>
+    <div class="editable test">{page.data.content}</div>
 </Layout>
