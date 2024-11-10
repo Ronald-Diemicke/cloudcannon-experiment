@@ -6,23 +6,6 @@ import BaseFooter from "./footer.astro"
     <head>
         <link rel="stylesheet" href="/hack.css" type="text/css">
         <script is:inline src="/hack.js"></script>
-        <script>
-            (() => {
-                if (!window.CloudCannon) {
-                    document.addEventListener('cloudcannon:load', function (e) {
-                        onLiveEditorLoad(e.detail.CloudCannon);
-                    });
-                } else {
-                    onLiveEditorLoad(window.CloudCannon);
-                }
-                function onLiveEditorLoad(CloudCannon) {
-                    CloudCannon.enableEvents();
-                }
-                document.addEventListener('cloudcannon:update', async function (e) {
-                    useNewPageProps(e.detail.CloudCannon);
-                });
-            })()
-        </script>
     </head>
     <body>
         <BaseHeader/>
