@@ -15,6 +15,12 @@ import BaseFooter from "./footer.astro"
                 } else {
                     onLiveEditorLoad(window.CloudCannon);
                 }
+                function onLiveEditorLoad(CloudCannon) {
+                    CloudCannon.enableEvents();
+                }
+                document.addEventListener('cloudcannon:update', async function (e) {
+                    useNewPageProps(e.detail.CloudCannon);
+                });
             })()
         </script>
     </head>
