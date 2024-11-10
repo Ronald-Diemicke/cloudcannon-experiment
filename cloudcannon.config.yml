@@ -34,3 +34,10 @@ markdown:
     superscript: false
     heading_ids: false
     attributes: false
+_inputs:
+  content:
+    type: markdown
+    options:
+      bold: true
+      italics: true
+      underline: true
