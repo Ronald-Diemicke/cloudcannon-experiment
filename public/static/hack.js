@@ -16,6 +16,10 @@
     //cloudcannon live preview
     async function useNewPageProps(CloudCannon) {
         const latestValue = await CloudCannon.value();
+        document.querySelectorAll('[data-cms-bind]').forEach((el) => {
+            const key = el.dataset['cmsBind'].slice(1);
+            el.innerHTML = latestValue[key]
+        })
     }
 
     if (!window.CloudCannon) {
