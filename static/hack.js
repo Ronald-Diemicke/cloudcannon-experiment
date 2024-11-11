@@ -13,6 +13,11 @@
 
     customElements.define("gb-hfpg-colorizer", GB_HF_PG_Colorizer);
 
+    //cloudcannon live preview
+    async function useNewPageProps(CloudCannon) {
+        const latestValue = await CloudCannon.value();
+    }
+
     if (!window.CloudCannon) {
         document.addEventListener('cloudcannon:load', function (e) {
             onLiveEditorLoad(e.detail.CloudCannon);
@@ -26,4 +31,5 @@
     document.addEventListener('cloudcannon:update', async function (e) {
         useNewPageProps(e.detail.CloudCannon);
     });
+
 })();
