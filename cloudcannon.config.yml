@@ -19,8 +19,61 @@ collections_config:
       image:
       metadata:
       gallery:
+    _editables:
+      content:
+        allow_custom_markup: false
+        remove_custom_markup: true
+        blockquote: true
+        bold: true
+        bulletedlist: true
+        center:
+        code:
+        copyformatting:
+        embed:
+        expandable:
+        format:
+        height:
+        horizontalrule:
+        image:
+        image_size_attributes: true
+        indent:
+        italic:
+        justify:
+        left:
+        link:
+        mime_type:
+        numberedlist:
+        outdent:
+        paths:
+        redo:
+        removeformat:
+        resize_style:
+        right:
+        snippet:
+        strike:
+        styles:
+        subscript:
+        superscript:
+        table:
+        underline:
+        undo: false
+        width:
+      image:
+        expandable:
+        height:
+        image_size_attributes: true
+        mime_type:
+        paths:
+        resize_style:
+        width:
+      link:
+        paths:
     _enabled_editors:
       - visual
+    _inputs:
+      content:
+        type: markdown
+        cascade: true
     disable_add: false
     disable_add_folder: false
     disable_file_actions: false
