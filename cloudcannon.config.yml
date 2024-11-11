@@ -8,6 +8,7 @@ collections_config:
     path: /src/content/pages
     name: Pages
     icon: wysiwyg
+    url: /[slug]/
     disable_url: false
     description: ''
     preview:
