@@ -18,8 +18,12 @@
         const latestValue = await CloudCannon.value();
         document.querySelectorAll('[data-cms-bind]').forEach((el) => {
             const key = el.dataset['cmsBind'].slice(1);
+            let newValue = latestValue[key];
             if(el.dataset['cmsBindAttribute']) {
-                el.setAttribute(el.dataset['cmsBindAttribute'],latestValue[key]);
+                if(el.dataset['cmsBindAttribute'] === 'src') {
+                    newValue = `/static${newValue}`;
+                }
+                el.setAttribute(el.dataset['cmsBindAttribute'], newValue);
             } else {
                 el.innerHTML = latestValue[key];
             }
