@@ -36,7 +36,7 @@
             const key = el.dataset['cmsBind'].slice(1);
             let newValue = getReturnValue(key,latestValue);
             if(el.dataset['cmsBindAttribute']) {
-                if(el.dataset['cmsBindAttribute'] === 'src') {
+                if(el.dataset['cmsBindAttribute'] === 'src' && !newValue.startsWith('/uploads/')) {
                     newValue = `/static${newValue}`;
                 }
                 el.setAttribute(el.dataset['cmsBindAttribute'], newValue);
