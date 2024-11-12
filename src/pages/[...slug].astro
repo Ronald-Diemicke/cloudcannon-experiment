@@ -1,9 +1,8 @@
 ---
 import { Debug } from 'astro:components';
-import PageBlocksSection from "../../components/sections/pageBlocksSection.astro";
+import PageBlocksSection from "@components/sections/pageBlocksSection";
 import Layout from "../layouts/base.astro";
 import {CollectionEntry,getCollection} from "astro:content";
-import TitleComponent from '@components/blocks/titleComponent.astro';
 
 export interface Props {
     page: CollectionEntry<"pages">;
@@ -35,7 +34,5 @@ const page = Astro.props.page;
              data-cms-bind-attribute="src"
              src={page.data.image}/>
     </div>
-    <TitleComponent
-            title={page.data?.titleComponent?.title}
-            body={page.data?.titleComponent?.body}/>
+    <PageBlocksSection blocksSection={page.data.blocksSection} />
 </Layout>

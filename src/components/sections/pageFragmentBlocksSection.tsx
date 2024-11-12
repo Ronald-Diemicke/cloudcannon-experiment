@@ -1,9 +1,9 @@
 import React from 'react';
 import type {Page_FragmentsQuery, Page_FragmentsQueryVariables} from '../../../tina/__generated__/types.ts';
-import ContentBlock from '../blocks/contentBlock.tsx';
+import ContentBlock from '../oldblocks/contentBlock.tsx';
 import { useTina, tinaField } from "tinacms/dist/react";
-import FragmentBlock from "../blocks/fragmentBlock.tsx";
-import SecNavBlock from "@components/blocks/secNavBlock.tsx";
+import FragmentBlock from "../oldblocks/fragmentBlock.tsx";
+import SecNavBlock from "@components/oldblocks/secNavBlock.tsx";
 
 interface Props {
     tinaProps: {
