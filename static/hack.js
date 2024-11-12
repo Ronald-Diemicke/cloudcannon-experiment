@@ -21,7 +21,7 @@
             if(typeof nextObj === 'object' && nextObj !== null) {
                 strKeyArray.shift();
                 let strKey = strKeyArray.join('.');
-                getReturnValue(strKey, nextObj);
+                return getReturnValue(strKey, nextObj);
             } else {
                 return nextObj;
             }
