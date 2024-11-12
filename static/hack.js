@@ -19,7 +19,9 @@
             let strKeyArray = strKey.split('.');
             let nextObj = obj[strKeyArray[0]];
             if(typeof nextObj === 'object' && nextObj !== null) {
-                getReturnValue(strKeyArray.shift().join('.'), nextObj);
+                strKeyArray.shift();
+                let strKey = strKeyArray.join('.');
+                getReturnValue(strKey, nextObj);
             } else {
                 return nextObj;
             }
