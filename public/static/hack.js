@@ -31,6 +31,7 @@
     }
     function onLiveEditorLoad(CloudCannon) {
         CloudCannon.enableEvents();
+        useNewPageProps(CloudCannon);
     }
     document.addEventListener('cloudcannon:update', async function (e) {
         useNewPageProps(e.detail.CloudCannon);
