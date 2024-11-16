@@ -8,6 +8,7 @@ export const pageCollection = defineCollection({
         content: z.string(),
         tags: z.array(z.string()),
         image: z.string().optional(),
-        blocksSection: z.array(z.any())
-    }),
+        blocksSection: z.array(z.any()),
+        contentBlocks: z.array(z.any())
+    })
 });

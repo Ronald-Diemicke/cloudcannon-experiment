@@ -1,0 +1,14 @@
+{
+  "spec": {
+    "structures": [
+      "contentBlocks"
+    ],
+    "label": "My Test Component",
+    "description": "A very simple component"
+  },
+  "blueprint": {
+    "text": "Hello World!"
+  },
+  "preview": null,
+  "_inputs": null
+}

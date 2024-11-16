@@ -8,4 +8,7 @@ blocksSection:
   - _componentName: titleComponent
     title: myTitle
     body: myBody
+contentBlocks:
+  - _bookshop_name: testComponent
+    text: this is another test
 ---
