@@ -39,7 +39,7 @@ _inputs:
   page_components:
     type: array
     options:
-      structures: _structures.content_blocks
+      structures: _structures.contentLoop
 source_editor:
   tab_size: 2
   theme: monokai

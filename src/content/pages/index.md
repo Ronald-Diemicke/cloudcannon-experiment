@@ -8,7 +8,7 @@ blocksSection:
   - _componentName: titleComponent
     title: myTitle
     body: myBody
-contentBlocks:
+contentLoop:
   - _bookshop_name: testComponent
     text: this is a test
   - _bookshop_name: testComponent

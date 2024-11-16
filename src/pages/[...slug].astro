@@ -1,10 +1,11 @@
 ---
 import { Debug } from 'astro:components';
-import PageBlocksSection from "@components/sections/pageBlocksSection";
 import Layout from "../layouts/base.astro";
 import {CollectionEntry,getCollection} from "astro:content";
-import Test from '../components/testComponent/testComponent.astro'
-import ContentLoop from '../shared/contentLoop.astro'
+import ContentLoop from '../components/shared/contentLoop/contentLoop.astro';
+import TestComponent from "../components/testComponent/testComponent.astro";
+import Stupid from "@components/stupid/stupid.astro";
+import MoreStupid from "../components/shared/anotherstupid/anotherstupid.astro";
 
 export interface Props {
     page: CollectionEntry<"pages">;
@@ -21,19 +22,8 @@ export async function getStaticPaths() {
 }
 
 const page = Astro.props.page;
-const { contentBlocks } = Astro.props.page.data;
+const { contentLoop } = Astro.props.page.data;
 ---
 <Layout>
-
-    <!--div>{page.slug}</div>
-    <div data-cms-bind="#content">{page.data.content}</div>
-    <div data-cms-bind="#tags">{page.data.tags}</div>
-    <div>
-        <img data-cms-bind="#image"
-             data-cms-bind-attribute="src"
-             src={page.data.image}/>
-    </div>
-    <PageBlocksSection blocksSection={page.data.blocksSection} /-->
-    <ContentLoop bookshop:live contentBlocks={contentBlocks} />
-
+    <ContentLoop bookshop:live contentLoop={contentLoop} />
 </Layout>
