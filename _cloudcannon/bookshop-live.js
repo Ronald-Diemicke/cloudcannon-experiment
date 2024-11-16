@@ -36273,8 +36273,8 @@ ${serializeProps(props, metadata)}`);
     value: "testComponent"
   });
 
-  // src/components/shared/contentLoop/contentLoop.astro
-  var $$metadata2 = createMetadata("/src/components/shared/contentLoop/contentLoop.astro", {
+  // src/components/contentLoop/contentLoop.astro
+  var $$metadata2 = createMetadata("/src/components/contentLoop/contentLoop.astro", {
     modules: [],
     hydratedComponents: [],
     clientOnlyComponents: [],
@@ -36295,10 +36295,10 @@ ${serializeProps(props, metadata)}`);
       } = Astro2.props;
       const components = {};
       const componentImports = /* @__PURE__ */ Object.assign({
-        "../../testComponent/testComponent.astro": testComponent_exports
+        "../testComponent/testComponent.astro": testComponent_exports
       });
       Object.entries(componentImports).forEach(([path, obj]) => {
-        const parts = path.replace("../../", "").split(".")[0].split("/");
+        const parts = path.replace("../", "").split(".")[0].split("/");
         if (parts[parts.length - 1] === parts[parts.length - 2]) {
           parts.pop();
         }
@@ -36392,19 +36392,19 @@ ${serializeProps(props, metadata)}`);
     } catch (__err) {
       console.error(__err);
       return renderTemplate`<div style="border: 3px solid red; border-radius: 2px; background-color: #FF9999; padding: 4px;">
-          <p style="font-size: 18px; font-weight: 600;">Error rendering shared/contentLoop/contentLoop!</p>
+          <p style="font-size: 18px; font-weight: 600;">Error rendering contentLoop/contentLoop!</p>
           <p style="font-size: 16px; font-weight: normal;">${__err.message}</p>
           </div>`;
     }
-  }, "/src/components/shared/contentLoop/contentLoop.astro", void 0);
+  }, "/src/components/contentLoop/contentLoop.astro", void 0);
   var contentLoop_default = $$ContentLoop;
   Object.defineProperty($$ContentLoop, "__bookshop_name", {
     enumerable: false,
     writable: true,
-    value: "shared/contentLoop"
+    value: "contentLoop"
   });
 
-  // bookshop-import-file:components/shared/contentLoop/contentLoop.astro__bookshop_file__
+  // bookshop-import-file:components/contentLoop/contentLoop.astro__bookshop_file__
   var contentLoop_default2 = contentLoop_default;
 
   // bookshop-import-file:components/testComponent/testComponent.astro__bookshop_file__
@@ -36412,7 +36412,7 @@ ${serializeProps(props, metadata)}`);
 
   // bookshop-import-glob:(.astro|.jsx|.tsx)
   var files = {};
-  files["components/shared/contentLoop/contentLoop.astro"] = contentLoop_default2;
+  files["components/contentLoop/contentLoop.astro"] = contentLoop_default2;
   files["components/testComponent/testComponent.astro"] = testComponent_default2;
   var astro_jsx_default = files;
 
