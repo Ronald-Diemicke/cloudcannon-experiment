@@ -3,7 +3,7 @@ import type {Page_FragmentsQuery, Page_FragmentsQueryVariables} from '../../../t
 import ContentBlock from '../oldblocks/contentBlock.tsx';
 import { useTina, tinaField } from "tinacms/dist/react";
 import FragmentBlock from "../oldblocks/fragmentBlock.tsx";
-import SecNavBlock from "@components/oldblocks/secNavBlock.tsx";
+import SecNavBlock from "../oldblocks/secNavBlock.tsx";
 
 interface Props {
     tinaProps: {
