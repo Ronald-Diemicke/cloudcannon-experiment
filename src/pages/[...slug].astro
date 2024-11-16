@@ -2,10 +2,7 @@
 import { Debug } from 'astro:components';
 import Layout from "../layouts/base.astro";
 import {CollectionEntry,getCollection} from "astro:content";
-import ContentLoop from '../components/shared/contentLoop/contentLoop.astro';
-import TestComponent from "../components/testComponent/testComponent.astro";
-import Stupid from "@components/stupid/stupid.astro";
-import MoreStupid from "../components/shared/anotherstupid/anotherstupid.astro";
+import ContentLoop from '../components/contentLoop/contentLoop.astro';
 
 export interface Props {
     page: CollectionEntry<"pages">;

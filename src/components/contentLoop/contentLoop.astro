@@ -1,12 +1,12 @@
 ---
 const { contentLoop } = Astro.props;
 const components = {};
-const componentImports = import.meta.glob("../../**/*.astro", {
+const componentImports = import.meta.glob("../**/*.astro", {
     eager: true,
 });
 Object.entries(componentImports).forEach(([path, obj]) => {
     const parts = path
-        .replace("../../", "")
+        .replace("../", "")
         .split(".")[0]
         .split("/");
     if (parts[parts.length - 1] === parts[parts.length - 2]) {
