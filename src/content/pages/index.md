@@ -11,4 +11,6 @@ blocksSection:
 contentBlocks:
   - _bookshop_name: testComponent
     text: this is a test
+  - _bookshop_name: testComponent
+    text: Touche
 ---
