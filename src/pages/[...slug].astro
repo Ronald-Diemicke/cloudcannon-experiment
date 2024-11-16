@@ -39,8 +39,9 @@ Object.entries(componentImports).forEach(([path, obj]) => {
 });
 
 ---
-<Layout bookshop:live>
-    <div>{page.slug}</div>
+<Layout>
+    <div bookshop:live>
+    <!--div>{page.slug}</div>
     <div data-cms-bind="#content">{page.data.content}</div>
     <div data-cms-bind="#tags">{page.data.tags}</div>
     <div>
@@ -48,10 +49,11 @@ Object.entries(componentImports).forEach(([path, obj]) => {
              data-cms-bind-attribute="src"
              src={page.data.image}/>
     </div>
-    <!--PageBlocksSection blocksSection={page.data.blocksSection} /-->
+    <PageBlocksSection blocksSection={page.data.blocksSection} /-->
 
     {page.data.contentBlocks.map((block) => {
         const Component = components[block._bookshop_name];
         return <Component {...block} />;
     })}
+    </div>
 </Layout>
