@@ -4,6 +4,7 @@ import PageBlocksSection from "@components/sections/pageBlocksSection";
 import Layout from "../layouts/base.astro";
 import {CollectionEntry,getCollection} from "astro:content";
 import Test from '../components/testComponent/testComponent.astro'
+import ContentLoop from '../shared/contentLoop.astro'
 
 export interface Props {
     page: CollectionEntry<"pages">;
@@ -20,27 +21,10 @@ export async function getStaticPaths() {
 }
 
 const page = Astro.props.page;
-
-const { contentBlocks } = Astro.props;
-const components = {};
-const componentImports = import.meta.glob("../components/**/*.astro", {
-    eager: true,
-});
-Object.entries(componentImports).forEach(([path, obj]) => {
-    const parts = path
-        .replace("../components/", "")
-        .split(".")[0]
-        .split("/");
-    if (parts[parts.length - 1] === parts[parts.length - 2]) {
-        parts.pop();
-    }
-    const bookshopName = parts.join("/");
-    components[bookshopName] = obj.default;
-});
-
+const { contentBlocks } = Astro.props.page.data;
 ---
 <Layout>
-    <div bookshop:live>
+
     <!--div>{page.slug}</div>
     <div data-cms-bind="#content">{page.data.content}</div>
     <div data-cms-bind="#tags">{page.data.tags}</div>
@@ -50,10 +34,6 @@ Object.entries(componentImports).forEach(([path, obj]) => {
              src={page.data.image}/>
     </div>
     <PageBlocksSection blocksSection={page.data.blocksSection} /-->
+    <ContentLoop bookshop:live contentBlocks={contentBlocks} />
 
-    {page.data.contentBlocks.map((block) => {
-        const Component = components[block._bookshop_name];
-        return <Component {...block} />;
-    })}
-    </div>
 </Layout>
