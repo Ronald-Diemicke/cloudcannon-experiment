@@ -36276,8 +36276,8 @@ ${serializeProps(props, metadata)}`);
   // bookshop-import-file:components/testComponent/testComponent.astro__bookshop_file__
   var testComponent_default2 = testComponent_default;
 
-  // src/shared/astro/contentLoop.astro
-  var $$metadata2 = createMetadata("/src/shared/astro/contentLoop.astro", {
+  // src/shared/astro/page.astro
+  var $$metadata2 = createMetadata("/src/shared/astro/page.astro", {
     modules: [],
     hydratedComponents: [],
     clientOnlyComponents: [],
@@ -36285,16 +36285,17 @@ ${serializeProps(props, metadata)}`);
     hoisted: []
   });
   var $$Astro2 = createAstro();
-  var $$ContentLoop = createComponent(($$result, $$props, $$slots) => {
+  var $$Page = createComponent(($$result, $$props, $$slots) => {
     try {
       const Astro2 = $$result.createAstro($$Astro2, $$props, $$slots);
       delete Astro2.props["bookshop:live"];
       delete Astro2.props["bookshop:binding"];
       delete Astro2.props?.__data_binding_path;
       delete Astro2.props?.__bookshop_path;
-      Astro2.self = $$ContentLoop;
+      Astro2.self = $$Page;
+      console.log(Astro2.props);
       const {
-        contentLoop
+        contentBlocks
       } = Astro2.props;
       const components = {};
       const componentImports = /* @__PURE__ */ Object.assign({
@@ -36308,7 +36309,7 @@ ${serializeProps(props, metadata)}`);
         const bookshopName = parts.join("/");
         components[bookshopName] = obj.default;
       });
-      return renderTemplate`${contentLoop.map((block) => {
+      return renderTemplate`${contentBlocks.map((block) => {
         const Component = components[block._bookshop_name];
         return renderTemplate`${(async () => {
           const bookshop_paths = [{
@@ -36395,25 +36396,25 @@ ${serializeProps(props, metadata)}`);
     } catch (__err) {
       console.error(__err);
       return renderTemplate`<div style="border: 3px solid red; border-radius: 2px; background-color: #FF9999; padding: 4px;">
-          <p style="font-size: 18px; font-weight: 600;">Error rendering contentLoop!</p>
+          <p style="font-size: 18px; font-weight: 600;">Error rendering page!</p>
           <p style="font-size: 16px; font-weight: normal;">${__err.message}</p>
           </div>`;
     }
-  }, "/src/shared/astro/contentLoop.astro", void 0);
-  var contentLoop_default = $$ContentLoop;
-  Object.defineProperty($$ContentLoop, "__bookshop_name", {
+  }, "/src/shared/astro/page.astro", void 0);
+  var page_default = $$Page;
+  Object.defineProperty($$Page, "__bookshop_name", {
     enumerable: false,
     writable: true,
-    value: "contentLoop"
+    value: "page"
   });
 
-  // bookshop-import-file:shared/astro/contentLoop.astro__bookshop_file__
-  var contentLoop_default2 = contentLoop_default;
+  // bookshop-import-file:shared/astro/page.astro__bookshop_file__
+  var page_default2 = page_default;
 
   // bookshop-import-glob:(.astro|.jsx|.tsx)
   var files = {};
   files["components/testComponent/testComponent.astro"] = testComponent_default2;
-  files["shared/astro/contentLoop.astro"] = contentLoop_default2;
+  files["shared/astro/page.astro"] = page_default2;
   var astro_jsx_default = files;
 
   // bookshop-import-config:bookshop.config.js
