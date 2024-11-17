@@ -1,0 +1,11 @@
+---
+interface Props {
+    heroImage: string,
+    heroImageAlt: string
+}
+
+const props = Astro.props;
+---
+<img class="gb-universal-image"
+     src={props.heroImage}
+     alt={props.heroImageAlt}/>;

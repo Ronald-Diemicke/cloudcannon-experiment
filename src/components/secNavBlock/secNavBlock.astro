@@ -1,0 +1,23 @@
+---
+interface Props {
+    secNavHeading: string,
+    secNavSubHeading: string,
+    secNavPrimaryCTALink: string,
+    secNavPrimaryCTALabel: string,
+    secNavSecondaryCTALink: string,
+    secNavSecondaryCTALabel: string
+}
+
+const props = Astro.props;
+
+---
+<nav class="gb-sec-nav">
+    <div>
+        <div class="gb-display4 heavy">{props.secNavHeading}</div>
+        <div class="gb-body3">{props.secNavSubHeading}</div>
+    </div>
+    <div>
+        <a class="gb-tertiary-button gb-small-button" href={props.secNavPrimaryCTALink}>{props.secNavPrimaryCTALabel}</a>
+        <a class="gb-primary-button gb-small-button" href={props.secNavSecondaryCTALink}>{props.secNavSecondaryCTALabel}</a>
+    </div>
+</nav>

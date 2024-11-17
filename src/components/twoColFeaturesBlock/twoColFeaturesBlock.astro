@@ -1,0 +1,19 @@
+---
+interface Props {
+    colOneFeatureHeading: string,
+    colOneFeatureText: string,
+    colTwoFeatureHeading: string,
+    colTwoFeatureText: string
+}
+const props = Astro.props;
+---
+<section class="gb-two-col-feature">
+    <div>
+        <h2>{props.colOneFeatureHeading}</h2>
+        {props.colOneFeatureText}
+    </div>
+    <div>
+        <h2>{props.colTwoFeatureHeading}</h2>
+        {props.colTwoFeatureText}
+    </div>
+</section>

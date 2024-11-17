@@ -1,22 +1,12 @@
-import type {
-    PageBlocksSectionHalfPageColorizerBlock,
-    PageBlocksSectionHalfPageColorizerBlockTrimsTrim,
-    PageBlocksSectionHalfPageColorizerBlockTrimsTrimColorsColor
-} from "../../../tina/__generated__/types.ts";
-
+---
 interface Props {
-    tinaProps: PageBlocksSectionHalfPageColorizerBlock;
+    title: string,
+    subTitle: string,
+    ctaLabel: string,
+    ctaLink: string,
 }
-
-declare module "react/jsx-runtime" {
-    namespace JSX {
-        interface IntrinsicElements {
-            "gb-hfpg-colorizer": JSX.HTMLAttributes<GB_HF_PG_Colorizer>,
-        }
-    }
-}
-class GB_HF_PG_Colorizer {}
-
+const props = Astro.props;
+/*
 export default function halfPageColorizerBlock({ tinaProps }: Props) {
 
     const GetDefaultTrim = ({tinaProps}: Props) => {
@@ -28,7 +18,7 @@ export default function halfPageColorizerBlock({ tinaProps }: Props) {
     }
 
     const GetDefaultColor = ({tinaProps}: Props) => {
-        /*return tinaProps.trims?.find((trim: PageBlocksSectionHalfPageColorizerBlockTrimsTrim) => {
+        return tinaProps.trims?.find((trim: PageBlocksSectionHalfPageColorizerBlockTrimsTrim) => {
             if(trim.isDefault) {
                 return trim.colors?.find((color: PageBlocksSectionHalfPageColorizerBlockTrimsTrimColorsColor) => {
                     if(color.isDefault) {
@@ -36,7 +26,7 @@ export default function halfPageColorizerBlock({ tinaProps }: Props) {
                     }
                 })
             }
-        })*/
+        })
         const defaultTrim = GetDefaultTrim({tinaProps});
         if (defaultTrim) {
             return defaultTrim.colors?.find((color: PageBlocksSectionHalfPageColorizerBlockTrimsTrimColorsColor) => {
@@ -46,16 +36,12 @@ export default function halfPageColorizerBlock({ tinaProps }: Props) {
             })
         }
     }
-
-    return (
-        <>
-            <gb-hfpg-colorizer>
-                <div style={{backgroundColor:GetDefaultColor({tinaProps}).colorBackground}}>
-                    <div>{tinaProps.title}</div>
-                    <div>{tinaProps.subTitle}</div>
-                    <button class="open">test</button>
-                </div>
-            </gb-hfpg-colorizer>
-        </>
-    );
-};
+*/
+---
+<gb-hfpg-colorizer>
+    <div>
+        <div>{props.title}</div>
+        <div>{props.subTitle}</div>
+        <button class="open">test</button>
+    </div>
+</gb-hfpg-colorizer>
