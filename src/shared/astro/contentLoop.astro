@@ -1,12 +1,12 @@
 ---
 const { contentLoop } = Astro.props;
 const components = {};
-const componentImports = import.meta.glob("../**/*.astro", {
+const componentImports = import.meta.glob("../../components/**/*.astro", {
     eager: true,
 });
 Object.entries(componentImports).forEach(([path, obj]) => {
     const parts = path
-        .replace("../", "")
+        .replace("../../components/", "")
         .split(".")[0]
         .split("/");
     if (parts[parts.length - 1] === parts[parts.length - 2]) {
@@ -17,9 +17,7 @@ Object.entries(componentImports).forEach(([path, obj]) => {
 });
 
 ---
-<div>
 {contentLoop.map((block) => {
     const Component = components[block._bookshop_name];
     return <Component {...block} />;
 })}
-</div>
