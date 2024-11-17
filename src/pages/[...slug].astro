@@ -1,8 +1,7 @@
 ---
 import { Debug } from 'astro:components';
-import Layout from "../layouts/base.astro";
+import PageLayout from "../layouts/base.astro";
 import {CollectionEntry,getCollection} from "astro:content";
-import Page from '../shared/astro/page.astro';
 
 export interface Props {
     page: CollectionEntry<"pages">;
@@ -20,6 +19,4 @@ export async function getStaticPaths() {
 
 const props = Astro.props.page;
 ---
-<Layout>
-    <Page bookshop:live frontmatter={props.data} />
-</Layout>
+<PageLayout frontmatter={props.data} />

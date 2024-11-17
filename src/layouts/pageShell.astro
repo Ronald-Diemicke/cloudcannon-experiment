@@ -1,0 +1,18 @@
+---
+import BaseHeader from "./header.astro"
+import BaseFooter from "./footer.astro"
+import Page from "../shared/astro/page.astro";
+---
+<html>
+    <head>
+        <link rel="stylesheet" href="/static/hack.css" type="text/css">
+        <script is:inline src="/static/hack.js"></script>
+    </head>
+    <body>
+    <BaseHeader/>
+    <main >
+        <slot/>
+    </main>
+    <BaseFooter/>
+    </body>
+</html>

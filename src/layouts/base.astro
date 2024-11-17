@@ -1,17 +1,19 @@
 ---
-import BaseHeader from "./header.astro"
-import BaseFooter from "./footer.astro"
+import Layout from './pageShell.astro';
+import Page from '../shared/astro/page.astro';
+
+type Props = {
+    frontmatter: {
+        title: string;
+        content_blocks: Array<Record<string, any>>;
+    };
+};
+
+if (!Astro.props.frontmatter) {
+    throw new Error("Page frontmatter must be defined");
+}
+const props = Astro.props.frontmatter;
 ---
-<html>
-    <head>
-        <link rel="stylesheet" href="/static/hack.css" type="text/css">
-        <script is:inline src="/static/hack.js"></script>
-    </head>
-    <body>
-        <BaseHeader/>
-        <main>
-            <slot/>
-        </main>
-        <BaseFooter/>
-    </body>
-</html>
+<Layout {...props}>
+    <Page bookshop:live contentBlocks={props.content_blocks} />
+</Layout>

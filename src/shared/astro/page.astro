@@ -1,5 +1,5 @@
 ---
-const {content_blocks} = Astro.props.frontmatter;
+const {contentBlocks} = Astro.props;
 const components = {};
 const componentImports = import.meta.glob("../../components/**/*.astro", {
     eager: true,
@@ -17,7 +17,7 @@ Object.entries(componentImports).forEach(([path, obj]) => {
 });
 
 ---
-{content_blocks.map((block, i) => {
+{contentBlocks.map((block, i) => {
     const Component = components[block._bookshop_name];
     return <Component {...block} key={i} />;
 })}
