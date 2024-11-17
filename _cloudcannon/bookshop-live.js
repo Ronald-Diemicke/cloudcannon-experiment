@@ -36305,7 +36305,8 @@ ${serializeProps(props, metadata)}`);
         const bookshopName = parts.join("/");
         components[bookshopName] = obj.default;
       });
-      return renderTemplate`${contentLoop.map((block) => {
+      return renderTemplate`${maybeRenderHead($$result)}<div>
+${contentLoop.map((block) => {
         const Component = components[block._bookshop_name];
         return renderTemplate`${(async () => {
           const bookshop_paths = [{
@@ -36375,7 +36376,7 @@ ${serializeProps(props, metadata)}`);
             }
             return acc;
           }, null);
-          return renderTemplate`${typeof $$maybeRenderHead !== "undefined" ? $$maybeRenderHead($$result) : ""}${bookshop_path !== null ? renderTemplate`<!--databinding:#${renderTemplate(bookshop_path)}-->` : ""}${false ? renderTemplate`<!--bookshop-live name(${Component.__bookshop_name}) params(${renderTemplate(params)})-->` : ""}${renderComponent($$result, "Component", Component, {
+          return renderTemplate`${typeof maybeRenderHead !== "undefined" ? maybeRenderHead($$result) : ""}${bookshop_path !== null ? renderTemplate`<!--databinding:#${renderTemplate(bookshop_path)}-->` : ""}${false ? renderTemplate`<!--bookshop-live name(${Component.__bookshop_name}) params(${renderTemplate(params)})-->` : ""}${renderComponent($$result, "Component", Component, {
             __data_binding_path: bookshop_path,
             ...(() => {
               if (block?.__bookshop_path) {
@@ -36388,7 +36389,8 @@ ${serializeProps(props, metadata)}`);
             })()
           })}${false ? renderTemplate`<!--bookshop-live end-->` : ""}${bookshop_path !== null ? renderTemplate`<!--databindingend:#${renderTemplate(bookshop_path)}-->` : ""}`;
         })()}`;
-      })}`;
+      })}
+</div>`;
     } catch (__err) {
       console.error(__err);
       return renderTemplate`<div style="border: 3px solid red; border-radius: 2px; background-color: #FF9999; padding: 4px;">
