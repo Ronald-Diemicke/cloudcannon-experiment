@@ -36309,13 +36309,17 @@ ${serializeProps(props, metadata)}`);
         const bookshopName = parts.join("/");
         components[bookshopName] = obj.default;
       });
-      return renderTemplate`${contentBlocks.map((block) => {
+      return renderTemplate`${contentBlocks.map((block, i) => {
         const Component = components[block._bookshop_name];
         return renderTemplate`${(async () => {
           const bookshop_paths = [{
             key: "bind",
             identifiers: ["block"],
             values: [block]
+          }, {
+            key: "key",
+            values: [Astro2.props.contentBlocks[i], Astro2.props.contentBlocks, Astro2.props, Astro2],
+            identifiers: [`Astro2.props.contentBlocks.${i}`, `Astro2.props.contentBlocks`, `Astro2.props`, `Astro2`]
           }].map(({
             key,
             identifiers,
@@ -36389,7 +36393,8 @@ ${serializeProps(props, metadata)}`);
                 };
               }
               return block;
-            })()
+            })(),
+            "key": i
           })}${false ? renderTemplate`<!--bookshop-live end-->` : ""}${bookshop_path !== null ? renderTemplate`<!--databindingend:#${renderTemplate(bookshop_path)}-->` : ""}`;
         })()}`;
       })}`;
