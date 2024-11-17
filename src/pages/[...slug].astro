@@ -2,7 +2,7 @@
 import { Debug } from 'astro:components';
 import Layout from "../layouts/base.astro";
 import {CollectionEntry,getCollection} from "astro:content";
-import ContentLoop from '../shared/astro/contentLoop.astro';
+import Page from '../shared/astro/page.astro';
 
 export interface Props {
     page: CollectionEntry<"pages">;
@@ -19,8 +19,8 @@ export async function getStaticPaths() {
 }
 
 const page = Astro.props.page;
-const { contentLoop } = Astro.props.page.data;
+const { content_blocks } = Astro.props.page.data;
 ---
 <Layout>
-    <ContentLoop bookshop:live contentLoop={contentLoop} />
+    <Page bookshop:live contentBlocks={content_blocks} />
 </Layout>

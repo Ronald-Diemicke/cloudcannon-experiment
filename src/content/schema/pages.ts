@@ -9,6 +9,6 @@ export const pageCollection = defineCollection({
         tags: z.array(z.string()),
         image: z.string().optional(),
         blocksSection: z.array(z.any()),
-        contentLoop: z.array(z.any())
+        content_blocks: z.array(z.any())
     })
 });
