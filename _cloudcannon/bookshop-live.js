@@ -36233,13 +36233,13 @@ ${serializeProps(props, metadata)}`);
     }
   };
 
-  // src/components/testComponent/testComponent.astro
-  var testComponent_exports = {};
-  __export(testComponent_exports, {
+  // src/components/halfPageColorizerBlock/halfPageColorizerBlock.astro
+  var halfPageColorizerBlock_exports = {};
+  __export(halfPageColorizerBlock_exports, {
     $$metadata: () => $$metadata,
-    default: () => testComponent_default
+    default: () => halfPageColorizerBlock_default
   });
-  var $$metadata = createMetadata("/src/components/testComponent/testComponent.astro", {
+  var $$metadata = createMetadata("/src/components/halfPageColorizerBlock/halfPageColorizerBlock.astro", {
     modules: [],
     hydratedComponents: [],
     clientOnlyComponents: [],
@@ -36247,16 +36247,271 @@ ${serializeProps(props, metadata)}`);
     hoisted: []
   });
   var $$Astro = createAstro();
-  var $$TestComponent = createComponent(($$result, $$props, $$slots) => {
+  var $$HalfPageColorizerBlock = createComponent(($$result, $$props, $$slots) => {
     try {
       const Astro2 = $$result.createAstro($$Astro, $$props, $$slots);
       delete Astro2.props["bookshop:live"];
       delete Astro2.props["bookshop:binding"];
       delete Astro2.props?.__data_binding_path;
       delete Astro2.props?.__bookshop_path;
+      Astro2.self = $$HalfPageColorizerBlock;
+      const props = Astro2.props;
+      return renderTemplate`${(async () => {
+        const bookshop_paths = [].map(({
+          key,
+          identifiers,
+          values
+        }) => {
+          if (typeof values[0]?.__bookshop_path === "string") {
+            if (values[0].__bookshop_path.length === 0) {
+              return;
+            }
+            return {
+              key,
+              path: values[0].__bookshop_path
+            };
+          }
+          if (!identifiers) {
+            if (typeof values[0] === "string") {
+              return {
+                key,
+                path: `"${values[0]}"`,
+                literal: true
+              };
+            }
+            return {
+              key,
+              path: values[0],
+              literal: true
+            };
+          }
+          const parentIndex = values.findIndex((value) => typeof value?.__bookshop_path === "string");
+          if (parentIndex >= 0) {
+            let path = values[parentIndex].__bookshop_path + identifiers[0].replace(identifiers[parentIndex], "");
+            if (path.startsWith(".")) {
+              path = path.slice(1);
+            }
+            return {
+              key,
+              path
+            };
+          }
+          if (identifiers[0].startsWith("Astro2.props.frontmatter.")) {
+            return {
+              key,
+              path: identifiers[0].replace("Astro2.props.frontmatter.", "")
+            };
+          }
+        }).filter((item) => !!item);
+        const params = bookshop_paths.map(({
+          key,
+          path
+        }) => key + ":" + path).join(" ");
+        const bookshop_path = bookshop_paths.filter(({
+          literal
+        }) => !literal).reduce((acc, {
+          path
+        }) => {
+          if (acc === null) {
+            return path;
+          }
+          while (!path.startsWith(acc)) {
+            acc = acc.replace(/\.?[^.]*$/, "");
+          }
+          return acc;
+        }, null);
+        return renderTemplate`${typeof maybeRenderHead !== "undefined" ? maybeRenderHead($$result) : ""}${bookshop_path !== null ? renderTemplate`<!--databinding:#${renderTemplate(bookshop_path)}-->` : ""}${false ? renderTemplate`<!--bookshop-live name(${(void 0).__bookshop_name}) params(${renderTemplate(params)})-->` : ""}${renderComponent($$result, "gb-hfpg-colorizer", "gb-hfpg-colorizer", {
+          __data_binding_path: bookshop_path
+        }, {
+          "default": () => renderTemplate`
+    ${maybeRenderHead($$result)}<div>
+        <div>${props.title}</div>
+        <div>${props.subTitle}</div>
+        <button class="open">test</button>
+    </div>
+`
+        })}${false ? renderTemplate`<!--bookshop-live end-->` : ""}${bookshop_path !== null ? renderTemplate`<!--databindingend:#${renderTemplate(bookshop_path)}-->` : ""}`;
+      })()}`;
+    } catch (__err) {
+      console.error(__err);
+      return renderTemplate`<div style="border: 3px solid red; border-radius: 2px; background-color: #FF9999; padding: 4px;">
+          <p style="font-size: 18px; font-weight: 600;">Error rendering halfPageColorizerBlock/halfPageColorizerBlock!</p>
+          <p style="font-size: 16px; font-weight: normal;">${__err.message}</p>
+          </div>`;
+    }
+  }, "/src/components/halfPageColorizerBlock/halfPageColorizerBlock.astro", void 0);
+  var halfPageColorizerBlock_default = $$HalfPageColorizerBlock;
+  Object.defineProperty($$HalfPageColorizerBlock, "__bookshop_name", {
+    enumerable: false,
+    writable: true,
+    value: "halfPageColorizerBlock"
+  });
+
+  // bookshop-import-file:components/halfPageColorizerBlock/halfPageColorizerBlock.astro__bookshop_file__
+  var halfPageColorizerBlock_default2 = halfPageColorizerBlock_default;
+
+  // src/components/heroImageBlock/heroImageBlock.astro
+  var heroImageBlock_exports = {};
+  __export(heroImageBlock_exports, {
+    $$metadata: () => $$metadata2,
+    default: () => heroImageBlock_default
+  });
+  var $$metadata2 = createMetadata("/src/components/heroImageBlock/heroImageBlock.astro", {
+    modules: [],
+    hydratedComponents: [],
+    clientOnlyComponents: [],
+    hydrationDirectives: /* @__PURE__ */ new Set([]),
+    hoisted: []
+  });
+  var $$Astro2 = createAstro();
+  var $$HeroImageBlock = createComponent(($$result, $$props, $$slots) => {
+    try {
+      const Astro2 = $$result.createAstro($$Astro2, $$props, $$slots);
+      delete Astro2.props["bookshop:live"];
+      delete Astro2.props["bookshop:binding"];
+      delete Astro2.props?.__data_binding_path;
+      delete Astro2.props?.__bookshop_path;
+      Astro2.self = $$HeroImageBlock;
+      const props = Astro2.props;
+      return renderTemplate`${maybeRenderHead($$result)}<img class="gb-universal-image"${addAttribute(props.heroImage, "src")}${addAttribute(props.heroImageAlt, "alt")}>;`;
+    } catch (__err) {
+      console.error(__err);
+      return renderTemplate`<div style="border: 3px solid red; border-radius: 2px; background-color: #FF9999; padding: 4px;">
+          <p style="font-size: 18px; font-weight: 600;">Error rendering heroImageBlock/heroImageBlock!</p>
+          <p style="font-size: 16px; font-weight: normal;">${__err.message}</p>
+          </div>`;
+    }
+  }, "/src/components/heroImageBlock/heroImageBlock.astro", void 0);
+  var heroImageBlock_default = $$HeroImageBlock;
+  Object.defineProperty($$HeroImageBlock, "__bookshop_name", {
+    enumerable: false,
+    writable: true,
+    value: "heroImageBlock"
+  });
+
+  // bookshop-import-file:components/heroImageBlock/heroImageBlock.astro__bookshop_file__
+  var heroImageBlock_default2 = heroImageBlock_default;
+
+  // src/components/heroTextBlock/heroTextBlock.astro
+  var heroTextBlock_exports = {};
+  __export(heroTextBlock_exports, {
+    $$metadata: () => $$metadata3,
+    default: () => heroTextBlock_default
+  });
+  var $$metadata3 = createMetadata("/src/components/heroTextBlock/heroTextBlock.astro", {
+    modules: [],
+    hydratedComponents: [],
+    clientOnlyComponents: [],
+    hydrationDirectives: /* @__PURE__ */ new Set([]),
+    hoisted: []
+  });
+  var $$Astro3 = createAstro();
+  var $$HeroTextBlock = createComponent(($$result, $$props, $$slots) => {
+    try {
+      const Astro2 = $$result.createAstro($$Astro3, $$props, $$slots);
+      delete Astro2.props["bookshop:live"];
+      delete Astro2.props["bookshop:binding"];
+      delete Astro2.props?.__data_binding_path;
+      delete Astro2.props?.__bookshop_path;
+      Astro2.self = $$HeroTextBlock;
+      const props = Astro2.props;
+      return renderTemplate`${maybeRenderHead($$result)}<section>
+    ${props.heroText}
+</section>`;
+    } catch (__err) {
+      console.error(__err);
+      return renderTemplate`<div style="border: 3px solid red; border-radius: 2px; background-color: #FF9999; padding: 4px;">
+          <p style="font-size: 18px; font-weight: 600;">Error rendering heroTextBlock/heroTextBlock!</p>
+          <p style="font-size: 16px; font-weight: normal;">${__err.message}</p>
+          </div>`;
+    }
+  }, "/src/components/heroTextBlock/heroTextBlock.astro", void 0);
+  var heroTextBlock_default = $$HeroTextBlock;
+  Object.defineProperty($$HeroTextBlock, "__bookshop_name", {
+    enumerable: false,
+    writable: true,
+    value: "heroTextBlock"
+  });
+
+  // bookshop-import-file:components/heroTextBlock/heroTextBlock.astro__bookshop_file__
+  var heroTextBlock_default2 = heroTextBlock_default;
+
+  // src/components/secNavBlock/secNavBlock.astro
+  var secNavBlock_exports = {};
+  __export(secNavBlock_exports, {
+    $$metadata: () => $$metadata4,
+    default: () => secNavBlock_default
+  });
+  var $$metadata4 = createMetadata("/src/components/secNavBlock/secNavBlock.astro", {
+    modules: [],
+    hydratedComponents: [],
+    clientOnlyComponents: [],
+    hydrationDirectives: /* @__PURE__ */ new Set([]),
+    hoisted: []
+  });
+  var $$Astro4 = createAstro();
+  var $$SecNavBlock = createComponent(($$result, $$props, $$slots) => {
+    try {
+      const Astro2 = $$result.createAstro($$Astro4, $$props, $$slots);
+      delete Astro2.props["bookshop:live"];
+      delete Astro2.props["bookshop:binding"];
+      delete Astro2.props?.__data_binding_path;
+      delete Astro2.props?.__bookshop_path;
+      Astro2.self = $$SecNavBlock;
+      const props = Astro2.props;
+      return renderTemplate`${maybeRenderHead($$result)}<nav class="gb-sec-nav">
+    <div>
+        <div class="gb-display4 heavy">${props.secNavHeading}</div>
+        <div class="gb-body3">${props.secNavSubHeading}</div>
+    </div>
+    <div>
+        <a class="gb-tertiary-button gb-small-button"${addAttribute(props.secNavPrimaryCTALink, "href")}>${props.secNavPrimaryCTALabel}</a>
+        <a class="gb-primary-button gb-small-button"${addAttribute(props.secNavSecondaryCTALink, "href")}>${props.secNavSecondaryCTALabel}</a>
+    </div>
+</nav>`;
+    } catch (__err) {
+      console.error(__err);
+      return renderTemplate`<div style="border: 3px solid red; border-radius: 2px; background-color: #FF9999; padding: 4px;">
+          <p style="font-size: 18px; font-weight: 600;">Error rendering secNavBlock/secNavBlock!</p>
+          <p style="font-size: 16px; font-weight: normal;">${__err.message}</p>
+          </div>`;
+    }
+  }, "/src/components/secNavBlock/secNavBlock.astro", void 0);
+  var secNavBlock_default = $$SecNavBlock;
+  Object.defineProperty($$SecNavBlock, "__bookshop_name", {
+    enumerable: false,
+    writable: true,
+    value: "secNavBlock"
+  });
+
+  // bookshop-import-file:components/secNavBlock/secNavBlock.astro__bookshop_file__
+  var secNavBlock_default2 = secNavBlock_default;
+
+  // src/components/testComponent/testComponent.astro
+  var testComponent_exports = {};
+  __export(testComponent_exports, {
+    $$metadata: () => $$metadata5,
+    default: () => testComponent_default
+  });
+  var $$metadata5 = createMetadata("/src/components/testComponent/testComponent.astro", {
+    modules: [],
+    hydratedComponents: [],
+    clientOnlyComponents: [],
+    hydrationDirectives: /* @__PURE__ */ new Set([]),
+    hoisted: []
+  });
+  var $$Astro5 = createAstro();
+  var $$TestComponent = createComponent(($$result, $$props, $$slots) => {
+    try {
+      const Astro2 = $$result.createAstro($$Astro5, $$props, $$slots);
+      delete Astro2.props["bookshop:live"];
+      delete Astro2.props["bookshop:binding"];
+      delete Astro2.props?.__data_binding_path;
+      delete Astro2.props?.__bookshop_path;
       Astro2.self = $$TestComponent;
+      const props = Astro2.props;
       return renderTemplate`${maybeRenderHead($$result)}<div class="c-sample">
-    <p>${Astro2.props.text}</p>
+    <p>${props.text}</p>
 </div>`;
     } catch (__err) {
       console.error(__err);
@@ -36276,18 +36531,69 @@ ${serializeProps(props, metadata)}`);
   // bookshop-import-file:components/testComponent/testComponent.astro__bookshop_file__
   var testComponent_default2 = testComponent_default;
 
-  // src/shared/astro/page.astro
-  var $$metadata2 = createMetadata("/src/shared/astro/page.astro", {
+  // src/components/twoColFeaturesBlock/twoColFeaturesBlock.astro
+  var twoColFeaturesBlock_exports = {};
+  __export(twoColFeaturesBlock_exports, {
+    $$metadata: () => $$metadata6,
+    default: () => twoColFeaturesBlock_default
+  });
+  var $$metadata6 = createMetadata("/src/components/twoColFeaturesBlock/twoColFeaturesBlock.astro", {
     modules: [],
     hydratedComponents: [],
     clientOnlyComponents: [],
     hydrationDirectives: /* @__PURE__ */ new Set([]),
     hoisted: []
   });
-  var $$Astro2 = createAstro();
+  var $$Astro6 = createAstro();
+  var $$TwoColFeaturesBlock = createComponent(($$result, $$props, $$slots) => {
+    try {
+      const Astro2 = $$result.createAstro($$Astro6, $$props, $$slots);
+      delete Astro2.props["bookshop:live"];
+      delete Astro2.props["bookshop:binding"];
+      delete Astro2.props?.__data_binding_path;
+      delete Astro2.props?.__bookshop_path;
+      Astro2.self = $$TwoColFeaturesBlock;
+      const props = Astro2.props;
+      return renderTemplate`${maybeRenderHead($$result)}<section class="gb-two-col-feature">
+    <div>
+        <h2>${props.colOneFeatureHeading}</h2>
+        ${props.colOneFeatureText}
+    </div>
+    <div>
+        <h2>${props.colTwoFeatureHeading}</h2>
+        ${props.colTwoFeatureText}
+    </div>
+</section>`;
+    } catch (__err) {
+      console.error(__err);
+      return renderTemplate`<div style="border: 3px solid red; border-radius: 2px; background-color: #FF9999; padding: 4px;">
+          <p style="font-size: 18px; font-weight: 600;">Error rendering twoColFeaturesBlock/twoColFeaturesBlock!</p>
+          <p style="font-size: 16px; font-weight: normal;">${__err.message}</p>
+          </div>`;
+    }
+  }, "/src/components/twoColFeaturesBlock/twoColFeaturesBlock.astro", void 0);
+  var twoColFeaturesBlock_default = $$TwoColFeaturesBlock;
+  Object.defineProperty($$TwoColFeaturesBlock, "__bookshop_name", {
+    enumerable: false,
+    writable: true,
+    value: "twoColFeaturesBlock"
+  });
+
+  // bookshop-import-file:components/twoColFeaturesBlock/twoColFeaturesBlock.astro__bookshop_file__
+  var twoColFeaturesBlock_default2 = twoColFeaturesBlock_default;
+
+  // src/shared/astro/page.astro
+  var $$metadata7 = createMetadata("/src/shared/astro/page.astro", {
+    modules: [],
+    hydratedComponents: [],
+    clientOnlyComponents: [],
+    hydrationDirectives: /* @__PURE__ */ new Set([]),
+    hoisted: []
+  });
+  var $$Astro7 = createAstro();
   var $$Page = createComponent(($$result, $$props, $$slots) => {
     try {
-      const Astro2 = $$result.createAstro($$Astro2, $$props, $$slots);
+      const Astro2 = $$result.createAstro($$Astro7, $$props, $$slots);
       delete Astro2.props["bookshop:live"];
       delete Astro2.props["bookshop:binding"];
       delete Astro2.props?.__data_binding_path;
@@ -36298,7 +36604,12 @@ ${serializeProps(props, metadata)}`);
       } = Astro2.props;
       const components = {};
       const componentImports = /* @__PURE__ */ Object.assign({
-        "../../components/testComponent/testComponent.astro": testComponent_exports
+        "../../components/halfPageColorizerBlock/halfPageColorizerBlock.astro": halfPageColorizerBlock_exports,
+        "../../components/heroImageBlock/heroImageBlock.astro": heroImageBlock_exports,
+        "../../components/heroTextBlock/heroTextBlock.astro": heroTextBlock_exports,
+        "../../components/secNavBlock/secNavBlock.astro": secNavBlock_exports,
+        "../../components/testComponent/testComponent.astro": testComponent_exports,
+        "../../components/twoColFeaturesBlock/twoColFeaturesBlock.astro": twoColFeaturesBlock_exports
       });
       Object.entries(componentImports).forEach(([path, obj]) => {
         const parts = path.replace("../../components/", "").split(".")[0].split("/");
@@ -36417,7 +36728,12 @@ ${serializeProps(props, metadata)}`);
 
   // bookshop-import-glob:(.astro|.jsx|.tsx)
   var files = {};
+  files["components/halfPageColorizerBlock/halfPageColorizerBlock.astro"] = halfPageColorizerBlock_default2;
+  files["components/heroImageBlock/heroImageBlock.astro"] = heroImageBlock_default2;
+  files["components/heroTextBlock/heroTextBlock.astro"] = heroTextBlock_default2;
+  files["components/secNavBlock/secNavBlock.astro"] = secNavBlock_default2;
   files["components/testComponent/testComponent.astro"] = testComponent_default2;
+  files["components/twoColFeaturesBlock/twoColFeaturesBlock.astro"] = twoColFeaturesBlock_default2;
   files["shared/astro/page.astro"] = page_default2;
   var astro_jsx_default = files;
 
