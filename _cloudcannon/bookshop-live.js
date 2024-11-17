@@ -36273,8 +36273,11 @@ ${serializeProps(props, metadata)}`);
     value: "testComponent"
   });
 
-  // src/components/contentLoop/contentLoop.astro
-  var $$metadata2 = createMetadata("/src/components/contentLoop/contentLoop.astro", {
+  // bookshop-import-file:components/testComponent/testComponent.astro__bookshop_file__
+  var testComponent_default2 = testComponent_default;
+
+  // src/shared/astro/contentLoop.astro
+  var $$metadata2 = createMetadata("/src/shared/astro/contentLoop.astro", {
     modules: [],
     hydratedComponents: [],
     clientOnlyComponents: [],
@@ -36295,18 +36298,17 @@ ${serializeProps(props, metadata)}`);
       } = Astro2.props;
       const components = {};
       const componentImports = /* @__PURE__ */ Object.assign({
-        "../testComponent/testComponent.astro": testComponent_exports
+        "../../components/testComponent/testComponent.astro": testComponent_exports
       });
       Object.entries(componentImports).forEach(([path, obj]) => {
-        const parts = path.replace("../", "").split(".")[0].split("/");
+        const parts = path.replace("../../components/", "").split(".")[0].split("/");
         if (parts[parts.length - 1] === parts[parts.length - 2]) {
           parts.pop();
         }
         const bookshopName = parts.join("/");
         components[bookshopName] = obj.default;
       });
-      return renderTemplate`${maybeRenderHead($$result)}<div>
-${contentLoop.map((block) => {
+      return renderTemplate`${contentLoop.map((block) => {
         const Component = components[block._bookshop_name];
         return renderTemplate`${(async () => {
           const bookshop_paths = [{
@@ -36376,7 +36378,7 @@ ${contentLoop.map((block) => {
             }
             return acc;
           }, null);
-          return renderTemplate`${typeof maybeRenderHead !== "undefined" ? maybeRenderHead($$result) : ""}${bookshop_path !== null ? renderTemplate`<!--databinding:#${renderTemplate(bookshop_path)}-->` : ""}${false ? renderTemplate`<!--bookshop-live name(${Component.__bookshop_name}) params(${renderTemplate(params)})-->` : ""}${renderComponent($$result, "Component", Component, {
+          return renderTemplate`${typeof $$maybeRenderHead !== "undefined" ? $$maybeRenderHead($$result) : ""}${bookshop_path !== null ? renderTemplate`<!--databinding:#${renderTemplate(bookshop_path)}-->` : ""}${false ? renderTemplate`<!--bookshop-live name(${Component.__bookshop_name}) params(${renderTemplate(params)})-->` : ""}${renderComponent($$result, "Component", Component, {
             __data_binding_path: bookshop_path,
             ...(() => {
               if (block?.__bookshop_path) {
@@ -36389,16 +36391,15 @@ ${contentLoop.map((block) => {
             })()
           })}${false ? renderTemplate`<!--bookshop-live end-->` : ""}${bookshop_path !== null ? renderTemplate`<!--databindingend:#${renderTemplate(bookshop_path)}-->` : ""}`;
         })()}`;
-      })}
-</div>`;
+      })}`;
     } catch (__err) {
       console.error(__err);
       return renderTemplate`<div style="border: 3px solid red; border-radius: 2px; background-color: #FF9999; padding: 4px;">
-          <p style="font-size: 18px; font-weight: 600;">Error rendering contentLoop/contentLoop!</p>
+          <p style="font-size: 18px; font-weight: 600;">Error rendering contentLoop!</p>
           <p style="font-size: 16px; font-weight: normal;">${__err.message}</p>
           </div>`;
     }
-  }, "/src/components/contentLoop/contentLoop.astro", void 0);
+  }, "/src/shared/astro/contentLoop.astro", void 0);
   var contentLoop_default = $$ContentLoop;
   Object.defineProperty($$ContentLoop, "__bookshop_name", {
     enumerable: false,
@@ -36406,16 +36407,13 @@ ${contentLoop.map((block) => {
     value: "contentLoop"
   });
 
-  // bookshop-import-file:components/contentLoop/contentLoop.astro__bookshop_file__
+  // bookshop-import-file:shared/astro/contentLoop.astro__bookshop_file__
   var contentLoop_default2 = contentLoop_default;
-
-  // bookshop-import-file:components/testComponent/testComponent.astro__bookshop_file__
-  var testComponent_default2 = testComponent_default;
 
   // bookshop-import-glob:(.astro|.jsx|.tsx)
   var files = {};
-  files["components/contentLoop/contentLoop.astro"] = contentLoop_default2;
   files["components/testComponent/testComponent.astro"] = testComponent_default2;
+  files["shared/astro/contentLoop.astro"] = contentLoop_default2;
   var astro_jsx_default = files;
 
   // bookshop-import-config:bookshop.config.js
