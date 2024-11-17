@@ -36,10 +36,6 @@ _inputs:
       italics: true
       underline: true
     cascade: true
-  page_components:
-    type: array
-    options:
-      structures: _structures.contentLoop
 source_editor:
   tab_size: 2
   theme: monokai
