@@ -36294,8 +36294,8 @@ ${serializeProps(props, metadata)}`);
       delete Astro2.props?.__bookshop_path;
       Astro2.self = $$Page;
       const {
-        content_blocks
-      } = Astro2.props.frontmatter;
+        contentBlocks
+      } = Astro2.props;
       const components = {};
       const componentImports = /* @__PURE__ */ Object.assign({
         "../../components/testComponent/testComponent.astro": testComponent_exports
@@ -36308,7 +36308,7 @@ ${serializeProps(props, metadata)}`);
         const bookshopName = parts.join("/");
         components[bookshopName] = obj.default;
       });
-      return renderTemplate`${content_blocks.map((block, i) => {
+      return renderTemplate`${contentBlocks.map((block, i) => {
         const Component = components[block._bookshop_name];
         return renderTemplate`${(async () => {
           const bookshop_paths = [{
@@ -36317,8 +36317,8 @@ ${serializeProps(props, metadata)}`);
             values: [block]
           }, {
             key: "key",
-            values: [Astro2.props.frontmatter.content_blocks[i], Astro2.props.frontmatter.content_blocks, Astro2.props.frontmatter, Astro2.props, Astro2],
-            identifiers: [`Astro2.props.frontmatter.content_blocks.${i}`, `Astro2.props.frontmatter.content_blocks`, `Astro2.props.frontmatter`, `Astro2.props`, `Astro2`]
+            values: [Astro2.props.contentBlocks[i], Astro2.props.contentBlocks, Astro2.props, Astro2],
+            identifiers: [`Astro2.props.contentBlocks.${i}`, `Astro2.props.contentBlocks`, `Astro2.props`, `Astro2`]
           }].map(({
             key,
             identifiers,
