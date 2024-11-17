@@ -18,8 +18,8 @@ export async function getStaticPaths() {
     });
 }
 
-const page = Astro.props.page;
+const props = Astro.props.page;
 ---
 <Layout>
-    <Page bookshop:live frontmatter={page.data} />
+    <Page bookshop:live frontmatter={props.data} />
 </Layout>
