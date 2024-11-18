@@ -1,0 +1,12 @@
+{
+  "spec": {
+    "structures": [
+      "content_blocks"
+    ],
+    "label": "Hero Image Block",
+    "description": "Hero Image"
+  },
+  "blueprint": {},
+  "preview": null,
+  "_inputs": null
+}

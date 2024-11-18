@@ -1,0 +1,12 @@
+{
+  "spec": {
+    "structures": [
+      "content_blocks"
+    ],
+    "label": "Half Page Colorizer Block",
+    "description": "Colorizer"
+  },
+  "blueprint": {},
+  "preview": null,
+  "_inputs": null
+}

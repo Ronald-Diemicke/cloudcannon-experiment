@@ -1,0 +1,12 @@
+{
+  "spec": {
+    "structures": [
+      "content_blocks"
+    ],
+    "label": "Secondary Nav Block",
+    "description": "Secondary Nav"
+  },
+  "blueprint": {},
+  "preview": null,
+  "_inputs": null
+}
