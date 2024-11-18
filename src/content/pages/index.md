@@ -18,9 +18,13 @@ content_blocks:
     heroImageAlt: Car Hero
   - _bookshop_name: twoColFeaturesBlock
     colOneFeatureHeading: Premium Design
-    colOneFeatureText: Col 1 Feature Text
+    colOneFeatureText: >-
+      A sleek & modern exterior design with a luxurious and comfortable
+      interior.
     colTwoFeatureHeading: Ample Space
-    colTwoFeatureText: Col 2 Feature text
+    colTwoFeatureText: >-
+      Comfortably **seat five**, with ample legroom and **42 cu. ft** of cargo
+      space.
   - _bookshop_name: twoColFeaturesBlock
     colOneFeatureHeading: Great fuel efficiency
     colOneFeatureText: Col 1 Feature Text
@@ -28,9 +32,13 @@ content_blocks:
     colTwoFeatureText: Col 2 Feature text
   - _bookshop_name: twoColFeaturesBlock
     colOneFeatureHeading: Advanced Safety
-    colOneFeatureText: Col 1 Feature Text
+    colOneFeatureText: >-
+      A sleek & modern exterior design with a luxurious and comfortable
+      interior.
     colTwoFeatureHeading: Seemless connectivity
-    colTwoFeatureText: Col 2 Feature text
+    colTwoFeatureText: >-
+      Comfortably **seat five**, with ample legroom and **42 cu. ft** of cargo
+      space.
   - _bookshop_name: halfPageColorizerBlock
     title: Color
     subTitle: 8+ options
