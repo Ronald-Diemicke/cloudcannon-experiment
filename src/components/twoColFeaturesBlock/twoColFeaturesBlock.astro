@@ -12,16 +12,10 @@ const props = Astro.props;
 <section class="gb-two-col-feature">
     <div>
         <h2>{props.colOneFeatureHeading}</h2>
-        <div dangerouslySetInnerHTML={{
-                    __html: md.render(props.colOneFeatureText),
-                }}
-        />
+        {md.render(props.colOneFeatureText)}
     </div>
     <div>
         <h2>{props.colTwoFeatureHeading}</h2>
-        <div dangerouslySetInnerHTML={{
-            __html: md.render(props.colTwoFeatureText),
-        }}
-        />
+        {md.render(props.colTwoFeatureText)}
     </div>
 </section>
