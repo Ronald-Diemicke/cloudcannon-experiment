@@ -36487,13 +36487,13 @@ ${serializeProps(props, metadata)}`);
   // bookshop-import-file:components/secNavBlock/secNavBlock.astro__bookshop_file__
   var secNavBlock_default2 = secNavBlock_default;
 
-  // src/components/testComponent/testComponent.astro
-  var testComponent_exports = {};
-  __export(testComponent_exports, {
+  // src/components/twoColFeaturesBlock/twoColFeaturesBlock.astro
+  var twoColFeaturesBlock_exports = {};
+  __export(twoColFeaturesBlock_exports, {
     $$metadata: () => $$metadata5,
-    default: () => testComponent_default
+    default: () => twoColFeaturesBlock_default
   });
-  var $$metadata5 = createMetadata("/src/components/testComponent/testComponent.astro", {
+  var $$metadata5 = createMetadata("/src/components/twoColFeaturesBlock/twoColFeaturesBlock.astro", {
     modules: [],
     hydratedComponents: [],
     clientOnlyComponents: [],
@@ -36501,53 +36501,9 @@ ${serializeProps(props, metadata)}`);
     hoisted: []
   });
   var $$Astro5 = createAstro();
-  var $$TestComponent = createComponent(($$result, $$props, $$slots) => {
-    try {
-      const Astro2 = $$result.createAstro($$Astro5, $$props, $$slots);
-      delete Astro2.props["bookshop:live"];
-      delete Astro2.props["bookshop:binding"];
-      delete Astro2.props?.__data_binding_path;
-      delete Astro2.props?.__bookshop_path;
-      Astro2.self = $$TestComponent;
-      const props = Astro2.props;
-      return renderTemplate`${maybeRenderHead($$result)}<div class="c-sample">
-    <p>${props.text}</p>
-</div>`;
-    } catch (__err) {
-      console.error(__err);
-      return renderTemplate`<div style="border: 3px solid red; border-radius: 2px; background-color: #FF9999; padding: 4px;">
-          <p style="font-size: 18px; font-weight: 600;">Error rendering testComponent/testComponent!</p>
-          <p style="font-size: 16px; font-weight: normal;">${__err.message}</p>
-          </div>`;
-    }
-  }, "/src/components/testComponent/testComponent.astro", void 0);
-  var testComponent_default = $$TestComponent;
-  Object.defineProperty($$TestComponent, "__bookshop_name", {
-    enumerable: false,
-    writable: true,
-    value: "testComponent"
-  });
-
-  // bookshop-import-file:components/testComponent/testComponent.astro__bookshop_file__
-  var testComponent_default2 = testComponent_default;
-
-  // src/components/twoColFeaturesBlock/twoColFeaturesBlock.astro
-  var twoColFeaturesBlock_exports = {};
-  __export(twoColFeaturesBlock_exports, {
-    $$metadata: () => $$metadata6,
-    default: () => twoColFeaturesBlock_default
-  });
-  var $$metadata6 = createMetadata("/src/components/twoColFeaturesBlock/twoColFeaturesBlock.astro", {
-    modules: [],
-    hydratedComponents: [],
-    clientOnlyComponents: [],
-    hydrationDirectives: /* @__PURE__ */ new Set([]),
-    hoisted: []
-  });
-  var $$Astro6 = createAstro();
   var $$TwoColFeaturesBlock = createComponent(($$result, $$props, $$slots) => {
     try {
-      const Astro2 = $$result.createAstro($$Astro6, $$props, $$slots);
+      const Astro2 = $$result.createAstro($$Astro5, $$props, $$slots);
       delete Astro2.props["bookshop:live"];
       delete Astro2.props["bookshop:binding"];
       delete Astro2.props?.__data_binding_path;
@@ -36583,17 +36539,17 @@ ${serializeProps(props, metadata)}`);
   var twoColFeaturesBlock_default2 = twoColFeaturesBlock_default;
 
   // src/shared/astro/page.astro
-  var $$metadata7 = createMetadata("/src/shared/astro/page.astro", {
+  var $$metadata6 = createMetadata("/src/shared/astro/page.astro", {
     modules: [],
     hydratedComponents: [],
     clientOnlyComponents: [],
     hydrationDirectives: /* @__PURE__ */ new Set([]),
     hoisted: []
   });
-  var $$Astro7 = createAstro();
+  var $$Astro6 = createAstro();
   var $$Page = createComponent(($$result, $$props, $$slots) => {
     try {
-      const Astro2 = $$result.createAstro($$Astro7, $$props, $$slots);
+      const Astro2 = $$result.createAstro($$Astro6, $$props, $$slots);
       delete Astro2.props["bookshop:live"];
       delete Astro2.props["bookshop:binding"];
       delete Astro2.props?.__data_binding_path;
@@ -36608,7 +36564,6 @@ ${serializeProps(props, metadata)}`);
         "../../components/heroImageBlock/heroImageBlock.astro": heroImageBlock_exports,
         "../../components/heroTextBlock/heroTextBlock.astro": heroTextBlock_exports,
         "../../components/secNavBlock/secNavBlock.astro": secNavBlock_exports,
-        "../../components/testComponent/testComponent.astro": testComponent_exports,
         "../../components/twoColFeaturesBlock/twoColFeaturesBlock.astro": twoColFeaturesBlock_exports
       });
       Object.entries(componentImports).forEach(([path, obj]) => {
@@ -36732,7 +36687,6 @@ ${serializeProps(props, metadata)}`);
   files["components/heroImageBlock/heroImageBlock.astro"] = heroImageBlock_default2;
   files["components/heroTextBlock/heroTextBlock.astro"] = heroTextBlock_default2;
   files["components/secNavBlock/secNavBlock.astro"] = secNavBlock_default2;
-  files["components/testComponent/testComponent.astro"] = testComponent_default2;
   files["components/twoColFeaturesBlock/twoColFeaturesBlock.astro"] = twoColFeaturesBlock_default2;
   files["shared/astro/page.astro"] = page_default2;
   var astro_jsx_default = files;
