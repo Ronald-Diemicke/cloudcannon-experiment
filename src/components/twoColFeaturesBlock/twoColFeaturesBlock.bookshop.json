@@ -9,5 +9,18 @@
   },
   "blueprint": {},
   "preview": null,
-  "_inputs": null
+  "_inputs": {
+    "colOneFeatureHeading": {
+      "type": "text"
+    },
+    "colOneFeatureText": {
+      "type": "markdown"
+    },
+    "colTwoFeatureHeading": {
+      "type": "text"
+    },
+    "colTwoFeatureText": {
+      "type": "markdown"
+    }
+  }
 }
