@@ -6,6 +6,6 @@ export const pageCollection = defineCollection({
     type: 'content', // v2.5.0 and later
     schema: z.object({
         title: z.string(),
-        content_blocks: z.array(z.any())
+        content_blocks: z.array(z.any()).optional()
     })
 });
