@@ -27,18 +27,18 @@ content_blocks:
       space.
   - _bookshop_name: twoColFeaturesBlock
     colOneFeatureHeading: Great fuel efficiency
-    colOneFeatureText: Col 1 Feature Text
+    colOneFeatureText: >-
+      **28/32 MPG** City/Hwy for daily commutes and long weekend drives.
     colTwoFeatureHeading: Expansive entertainment
-    colTwoFeatureText: Col 2 Feature text
+    colTwoFeatureText: >-
+      **11" ultrawide** infotainment display, voice recognition and premium sound system.
   - _bookshop_name: twoColFeaturesBlock
     colOneFeatureHeading: Advanced Safety
     colOneFeatureText: >-
-      A sleek & modern exterior design with a luxurious and comfortable
-      interior.
+      Adaptive cruise control, lane-keeping assist, blind spot monitoring and automatic emergency breaking
     colTwoFeatureHeading: Seemless connectivity
     colTwoFeatureText: >-
-      Comfortably **seat five**, with ample legroom and **42 cu. ft** of cargo
-      space.
+      Keyless entry, push-button start, wireless charging and so much more
   - _bookshop_name: halfPageColorizerBlock
     title: Color
     subTitle: 8+ options
