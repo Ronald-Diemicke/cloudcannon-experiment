@@ -4,7 +4,8 @@
       "content_blocks"
     ],
     "label": "Secondary Nav Block",
-    "description": "Secondary Nav"
+    "description": "Secondary Nav",
+    "icon": "navigation"
   },
   "blueprint": {},
   "preview": null,

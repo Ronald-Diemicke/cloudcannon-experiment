@@ -4,7 +4,8 @@
       "content_blocks"
     ],
     "label": "Two Column Features Block",
-    "description": "Features Block"
+    "description": "Features Block",
+    "icon": "list"
   },
   "blueprint": {},
   "preview": null,

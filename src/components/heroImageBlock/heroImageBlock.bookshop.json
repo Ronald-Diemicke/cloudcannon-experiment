@@ -4,7 +4,8 @@
       "content_blocks"
     ],
     "label": "Hero Image Block",
-    "description": "Hero Image"
+    "description": "Hero Image",
+    "icon": "image"
   },
   "blueprint": {},
   "preview": null,

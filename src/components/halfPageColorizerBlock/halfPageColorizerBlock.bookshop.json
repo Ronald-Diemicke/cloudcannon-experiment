@@ -4,7 +4,8 @@
       "content_blocks"
     ],
     "label": "Half Page Colorizer Block",
-    "description": "Colorizer"
+    "description": "Colorizer",
+    "icon": "palette"
   },
   "blueprint": {},
   "preview": null,
